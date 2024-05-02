@@ -1,0 +1,24 @@
+
+kafka-topics --list --boostrap-server broker:29092
+
+docker exec -it 6c734f49a08c /bin/bash
+
+kafka-console-consumer --topic financial_transactions --bootstrap-server broker:29092
+kafka-console-consumer --topic financial_transactions --bootstrap-server broker:29092 --from-beginning
+
+
+Instalar no python
+pip install faker
+pip install confluent_kafka
+pip install simplejson
+
+
+mvn clean
+mvn package
+
+docker cp target/demo-1.0-SNAPSHOT.jar 583952b65514:/opt/flink
+
+docker exec -it 583952b65514 bash
+
+Executar flink(Sempre executar pelo jobmanager)
+./bin/flink run -c com.ecommerce.DataStreamJob ./demo-1.0-SNAPSHOT.jar
