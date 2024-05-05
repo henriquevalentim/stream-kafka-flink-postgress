@@ -43,9 +43,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      minha-rede:
-        external: true
 
   postgres:
     image: postgres:latest

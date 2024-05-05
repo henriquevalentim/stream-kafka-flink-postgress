@@ -21,4 +21,4 @@ docker cp target/demo-1.0-SNAPSHOT.jar 583952b65514:/opt/flink
 docker exec -it 583952b65514 bash
 
 Executar flink(Sempre executar pelo jobmanager)
-./bin/flink run -c com.ecommerce.DataStreamJob ./demo-1.0-SNAPSHOT.jar
+./bin/flink run -c com.ecommerce.DataStreamJob .target/demo-1.0-SNAPSHOT.jar
